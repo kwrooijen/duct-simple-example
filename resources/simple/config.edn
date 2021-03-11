@@ -1,0 +1,19 @@
+{:duct.profile/base
+ {:duct.core/project-ns simple
+
+  :duct.router/reitit
+  {:routes
+   [["/"
+     {:middleware []}
+     ["simple" {:get {:handler #ig/ref :simple.handler/simple}}]]]}
+
+  :simple.handler/simple {}}
+
+ ;; Module keys
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+ :duct.module.web/site {}}
